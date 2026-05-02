@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Fahmid Hasan builds AI automation systems, support chatbots, data dashboards, and lean AI tools for startups and small businesses.">
+    <meta name="keywords" content="Fahmid Hasan, AI automation, AI chatbot developer, data dashboard, machine learning, portfolio">
+    <title>Fahmid Hasan | AI Automation, Chatbots & Data Tools</title>
+    <link rel="canonical" href="https://fahmidhasann.github.io/">
+    <meta property="og:title" content="Fahmid Hasan | AI Automation, Chatbots & Data Tools">
+    <meta property="og:description" content="AI automation, support chatbots, dashboards, and lean product builds for startups and small businesses.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://fahmidhasann.github.io/">
+    <meta property="og:image" content="https://fahmidhasann.github.io/assets/profile-photo.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Fahmid Hasan | AI Automation, Chatbots & Data Tools">
+    <meta name="twitter:description" content="AI automation, support chatbots, dashboards, and lean product builds for startups and small businesses.">
+    <meta name="twitter:image" content="https://fahmidhasann.github.io/assets/profile-photo.jpg">
+    <link rel="icon" type="image/jpeg" href="assets/profile-photo.jpg">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  </head>
+  <body>
+    <!-- Progress bar that tracks scroll position -->
+    <div class="progress-bar" role="progressbar" aria-label="Page scroll progress"></div>
+
+    <!-- Main Navigation -->
+    <nav class="compact-nav" role="navigation" aria-label="Main navigation">
+      <div class="nav-toggle" id="navToggle" role="button" aria-label="Toggle navigation menu" tabindex="0">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="#hero" class="nav-link">Home</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="section hero" aria-labelledby="hero-heading">
+      <div class="hero-background">
+        <div id="particles-js"></div>
+      </div>
+      
+      <div class="hero-content">
+        <!-- Mobile profile image at the top -->
+        <div class="hero-image mobile-first">
+          <div class="profile-frame">
+            <img src="assets/profile-photo.jpg" alt="Fahmid Hasan" class="profile-image">
+          </div>
+        </div>
+        
+        <div class="hero-text">
+          <h1 id="hero-heading" class="hero-name">
+            <span class="name-char">F</span>
+            <span class="name-char">a</span>
+            <span class="name-char">h</span>
+            <span class="name-char">m</span>
+            <span class="name-char">i</span>
+            <span class="name-char">d</span>
+            <span class="name-char space"></span>
+            <span class="name-char">H</span>
+            <span class="name-char">a</span>
+            <span class="name-char">s</span>
+            <span class="name-char">a</span>
+            <span class="name-char">n</span>
+          </h1>
+          <div class="hero-subtitle">
+            <span class="typed-text"></span>
+            <span class="cursor-blink">|</span>
+          </div>
+          <p class="hero-tagline">I help businesses and startups build intelligent systems that save time.</p>
+
+          <div class="hero-cta">
+            <a href="#projects" class="btn btn-primary">View Projects</a>
+            <a href="#contact" class="btn btn-secondary">Start a Project</a>
+          </div>
+
+        </div>
+        
+        <!-- Desktop profile image at the right -->
+        <div class="hero-image desktop-only">
+          <div class="profile-frame">
+            <img src="assets/profile-photo.jpg" alt="Fahmid Hasan" class="profile-image">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section projects-section" aria-labelledby="projects-heading">
+      <div class="container">
+        <header class="section-header">
+          <h2 id="projects-heading" class="section-title">Projects & Research</h2>
+          <p class="section-subtitle">Selected builds in AI automation, support systems, data products, and applied machine learning.</p>
+        </header>
+        
+        <div class="projects-filter">
+          <button class="filter-btn active" data-filter="all" aria-label="Show all projects">All</button>
+          <button class="filter-btn" data-filter="ai" aria-label="Show AI & ML projects">AI & ML</button>
+          <button class="filter-btn" data-filter="automation" aria-label="Show Automation projects">Automation</button>
+          <button class="filter-btn" data-filter="data" aria-label="Show Data & Viz projects">Data & Viz</button>
+        </div>
+        
+        <div class="projects-grid" id="projectsGrid">
+          <!-- Project 1: AI-Powered Cold Outreach Automation -->
+          <div class="project-card" id="project-cold-outreach" data-category="automation" data-video="assets/Project/Al-Powered Lead Generation & Cold Outreach.mp4" data-title="AI-Powered Cold Outreach Automation">
+            <div class="project-image">
+              <img src="assets/Project/cold-outreach-thumbnail.jpeg" alt="AI-Powered Cold Outreach Automation" loading="lazy">
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">AI-Powered Cold Outreach Automation</h3>
+              <p class="project-description">An automated B2B outreach pipeline that scrapes lead websites, uses Groq LLM to generate personalized cold emails, sends them via Gmail, and updates lead status in Google Sheets — fully hands-free.</p>
+              <div class="project-tags">
+                <span class="tag">n8n</span>
+                <span class="tag">Google Sheets</span>
+                <span class="tag">Groq (LLaMA 3.3)</span>
+                <span class="tag">Gmail</span>
+              </div>
+              <div class="project-actions">
+                <button class="btn-demo" aria-label="Watch demo for AI-Powered Cold Outreach Automation"><i class="fas fa-play" aria-hidden="true"></i> Watch Demo</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 2: DamKoto Bot -->
+          <div class="project-card" id="project-damkoto" data-category="automation" data-video="assets/Project/Dam koto bot.mp4" data-title="DamKoto Bot — Multilingual AI Customer Support">
+            <div class="project-image">
+              <img src="assets/Project/damkoto-bot-thumbnail.jpeg" alt="DamKoto Bot — Multilingual AI Customer Support" loading="lazy">
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">DamKoto Bot — Multilingual AI Support</h3>
+              <p class="project-description">An AI-powered customer support automation that responds fluently in Bangla, Banglish, or English by detecting and matching the user's language. Searches a live product catalog by brand, price range, or model, checks inventory status, and answers questions about delivery, payment, and return policies using a vector-based knowledge base.</p>
+              <div class="project-tags">
+                <span class="tag">n8n</span>
+                <span class="tag">Google Gemini</span>
+                <span class="tag">AI Agent</span>
+                <span class="tag">Vector Store</span>
+                <span class="tag">Bangla NLP</span>
+              </div>
+              <div class="project-actions">
+                <button class="btn-demo" aria-label="Watch demo for DamKoto Bot"><i class="fas fa-play" aria-hidden="true"></i> Watch Demo</button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="show-more-container">
+          <button class="btn-show-more" id="projectsShowMore" aria-expanded="false" aria-controls="projectsGrid">
+            <span class="show-more-label">Show More Projects</span> <i class="fas fa-chevron-down" aria-hidden="true"></i>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact-section" aria-labelledby="contact-heading">
+      <div class="container">
+        <header class="section-header">
+          <h2 id="contact-heading" class="section-title">Let's Connect</h2>
+          <p class="section-subtitle">Tell me what you want to build, automate, or improve. I usually work best on focused scopes with clear business outcomes.</p>
+        </header>
+        
+        <div class="contact-content">
+          <!-- Contact Form -->
+          <div class="contact-form-wrapper">
+            <form id="contactForm" class="contact-form">
+              <input type="hidden" name="access_key" value="756aa2fa-77ba-4671-9ba7-2161b61c8c11">
+              <input type="hidden" name="subject" value="New message from portfolio">
+              <input type="checkbox" name="botcheck" style="display:none">
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="contact-name">Name</label>
+                  <input type="text" id="contact-name" name="name" placeholder="Your name" required>
+                </div>
+                <div class="form-group">
+                  <label for="contact-email">Email</label>
+                  <input type="email" id="contact-email" name="email" placeholder="you@company.com" required>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="contact-company">Company</label>
+                <input type="text" id="contact-company" name="company" placeholder="Your company">
+              </div>
+
+              <div class="form-group">
+                <label for="contact-service">What do you need help with?</label>
+                <select id="contact-service" name="service">
+                  <option value="">Select a topic</option>
+                  <option value="AI Automation">AI Automation</option>
+                  <option value="Chatbot Development">Chatbot Development</option>
+                  <option value="Data Dashboard">Data Dashboard</option>
+                  <option value="Web Development">Web Development</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="contact-message">Message</label>
+                <textarea id="contact-message" name="message" rows="5" placeholder="Tell me about your project..." required></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary contact-submit">
+                <span class="btn-text">Send Message</span>
+                <i class="fas fa-paper-plane" aria-hidden="true"></i>
+                <span class="btn-loading" style="display:none"><i class="fas fa-spinner fa-spin" aria-hidden="true"></i> Sending...</span>
+              </button>
+
+              <div id="formResult" class="form-result" aria-live="polite"></div>
+            </form>
+          </div>
+
+          <!-- Sidebar: contact cards + social links -->
+          <div class="contact-sidebar">
+            <div class="contact-info">
+              <!-- Email Contact -->
+              <a href="mailto:fahmidhasantaohid@gmail.com" class="contact-card">
+                <i class="fas fa-envelope" aria-hidden="true"></i>
+                <h3>Email</h3>
+              </a>
+
+              <!-- WhatsApp Contact -->
+              <a href="https://wa.me/8801732021592" target="_blank" rel="noopener noreferrer" class="contact-card">
+                <i class="fab fa-whatsapp" aria-hidden="true"></i>
+                <h3>WhatsApp</h3>
+              </a>
+            </div>
+
+            <!-- Social Media Links -->
+            <div class="social-links">
+              <a href="https://www.linkedin.com/in/fahmid-hasan-taohid/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile" class="social-link">
+                <i class="fab fa-linkedin" aria-hidden="true"></i>
+              </a>
+              <a href="https://github.com/fahmidhasann" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile" class="social-link">
+                <i class="fab fa-github" aria-hidden="true"></i>
+              </a>
+              <a href="https://www.researchgate.net/profile/Fahmid-Hasan-Taohid" target="_blank" rel="noopener noreferrer" aria-label="ResearchGate Profile" class="social-link">
+                <i class="fab fa-researchgate" aria-hidden="true"></i>
+              </a>
+              <a href="https://www.instagram.com/fahmid_hasann/" target="_blank" rel="noopener noreferrer" aria-label="Instagram Profile" class="social-link">
+                <i class="fab fa-instagram" aria-hidden="true"></i>
+              </a>
+              <a href="https://www.facebook.com/fahmiddhasann" target="_blank" rel="noopener noreferrer" aria-label="Facebook Profile" class="social-link">
+                <i class="fab fa-facebook" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-info">
+            <h3>Fahmid Hasan Taohid</h3>
+            <p class="footer-status">Available for client work</p>
+          </div>
+          <div class="footer-copyright">
+            <p>© 2026 Fahmid Hasan. All rights reserved.</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Command Palette -->
+    <div class="command-palette" id="commandPalette" role="dialog" aria-labelledby="commandPaletteLabel" aria-modal="true" tabindex="-1">
+      <div class="command-palette-content">
+        <h2 id="commandPaletteLabel" class="sr-only">Command Palette</h2>
+        <input type="text" id="commandInput" placeholder="Type a command or search..." aria-label="Command input">
+        <ul id="commandList" class="command-list" role="listbox">
+          <li data-action="home" role="option">Home</li>
+          <li data-action="projects" role="option">Projects</li>
+          <li data-action="contact" role="option">Contact</li>
+          <li data-action="dark-mode" role="option">Toggle Dark Mode</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Video Demo Popup -->
+    <div class="video-popup-backdrop" id="videoPopupBackdrop" aria-hidden="true"></div>
+    <div class="video-popup" id="videoPopup" role="dialog" aria-label="Project demo preview">
+      <div class="video-popup-header">
+        <span class="video-popup-badge"><i class="fas fa-play" aria-hidden="true"></i> Live Demo</span>
+        <span class="video-popup-title" id="videoPopupTitle"></span>
+        <button class="video-popup-close" id="videoPopupClose" aria-label="Close demo">&#x2715;</button>
+      </div>
+      <video id="videoPopupPlayer" muted loop playsinline></video>
+    </div>
+
+    <!-- External Scripts -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
