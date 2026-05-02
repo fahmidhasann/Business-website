@@ -6,7 +6,6 @@ document.addEventListener('DOMContentLoaded', function() {
   initializeTextAnimations();
   initializeScrollEffects();
   initializeNavigation();
-  initializeProjectFiltering();
   initializeShowMore();
   initializeCommandPalette();
   initializeDarkModeToggle();
@@ -288,79 +287,6 @@ function clearProjectHideTimeout(projectCard) {
   projectCard._hideTimeoutId = null;
 }
 
-function scheduleProjectHide(projectCard) {
-  clearProjectHideTimeout(projectCard);
-  projectCard._hideTimeoutId = window.setTimeout(() => {
-    projectCard.style.display = 'none';
-    projectCard._hideTimeoutId = null;
-  }, 300);
-}
-
-/**
- * Initialize project filtering functionality
- */
-function initializeProjectFiltering() {
-  const filterBtns = document.querySelectorAll('.filter-btn');
-  const projectCards = document.querySelectorAll('.project-card');
-  const VISIBLE_COUNT = 3;
-
-  filterBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      filterBtns.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-
-      const filter = btn.getAttribute('data-filter');
-      const showMoreBtn = document.getElementById('projectsShowMore');
-
-      // Collect cards that match the filter
-      const matchingCards = [];
-      projectCards.forEach(card => {
-        if (filter === 'all' || card.getAttribute('data-category') === filter) {
-          matchingCards.push(card);
-        }
-      });
-
-      // Apply visibility based on filter match and show-more state
-      projectCards.forEach(card => {
-        clearProjectHideTimeout(card);
-        const matches = filter === 'all' || card.getAttribute('data-category') === filter;
-        if (!matches) {
-          card.classList.remove('hidden-card');
-          card.style.opacity = '0';
-          card.style.transform = 'translateY(20px)';
-          scheduleProjectHide(card);
-        } else {
-          card.style.display = 'block';
-          setTimeout(() => {
-            card.style.opacity = '1';
-            card.style.transform = 'translateY(0)';
-          }, 10);
-        }
-      });
-
-      // Reset show-more state for the new filtered set
-      if (showMoreBtn) {
-        if (matchingCards.length > VISIBLE_COUNT) {
-          matchingCards.forEach((card, i) => {
-            if (i >= VISIBLE_COUNT) {
-              card.classList.add('hidden-card');
-            } else {
-              card.classList.remove('hidden-card');
-            }
-          });
-          showMoreBtn.setAttribute('aria-expanded', 'false');
-          const label = showMoreBtn.querySelector('.show-more-label');
-          if (label) label.textContent = 'Show More Projects';
-          showMoreBtn.style.display = '';
-        } else {
-          matchingCards.forEach(card => card.classList.remove('hidden-card'));
-          showMoreBtn.style.display = 'none';
-        }
-      }
-    });
-  });
-}
-
 /**
  * Show/hide items beyond the initial visible count with a toggle button.
  * Works independently for projects and videos.
@@ -548,12 +474,7 @@ function revealProjectCard(projectCard) {
 
   clearProjectHideTimeout(projectCard);
 
-  const allFilterBtn = document.querySelector('.filter-btn[data-filter="all"]');
   const showMoreBtn = document.getElementById('projectsShowMore');
-
-  if (allFilterBtn && !allFilterBtn.classList.contains('active')) {
-    allFilterBtn.click();
-  }
 
   if (projectCard.classList.contains('hidden-card') && showMoreBtn && showMoreBtn.getAttribute('aria-expanded') !== 'true') {
     showMoreBtn.click();
