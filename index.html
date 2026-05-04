@@ -5,21 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Fahmid Hasan builds AI automation systems, support chatbots, data dashboards, and lean AI tools for startups and small businesses.">
     <meta name="keywords" content="Fahmid Hasan, AI automation, AI chatbot developer, data dashboard, machine learning, portfolio">
-    <title>Fahmid Hasan | AI Automation, Chatbots & Data Tools</title>
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https:; media-src 'self'; connect-src 'self' https://api.web3forms.com; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action https://api.web3forms.com;">
+    <title>Fahmid Hasan | AI Automation, Chatbots &amp; Data Tools</title>
     <link rel="canonical" href="https://fahmidhasann.github.io/">
-    <meta property="og:title" content="Fahmid Hasan | AI Automation, Chatbots & Data Tools">
+    <meta property="og:title" content="Fahmid Hasan | AI Automation, Chatbots &amp; Data Tools">
     <meta property="og:description" content="AI automation, support chatbots, dashboards, and lean product builds for startups and small businesses.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://fahmidhasann.github.io/">
     <meta property="og:image" content="https://fahmidhasann.github.io/assets/profile-photo.jpg">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Fahmid Hasan | AI Automation, Chatbots & Data Tools">
+    <meta name="twitter:title" content="Fahmid Hasan | AI Automation, Chatbots &amp; Data Tools">
     <meta name="twitter:description" content="AI automation, support chatbots, dashboards, and lean product builds for startups and small businesses.">
     <meta name="twitter:image" content="https://fahmidhasann.github.io/assets/profile-photo.jpg">
     <link rel="icon" type="image/jpeg" href="assets/profile-photo.jpg">
+    <!-- Prevent FOUC: set theme before styles render -->
+    <script src="theme-init.js"></script>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha384-iw3OoTErCYJJB9mCa8LNS2hbsQ7M3C0EpIsO/H5+EGAkPGc6rk+V8i04oW/K5xq0" crossorigin="anonymous">
   </head>
   <body>
     <!-- Progress bar that tracks scroll position -->
@@ -27,11 +35,11 @@
 
     <!-- Main Navigation -->
     <nav class="compact-nav" role="navigation" aria-label="Main navigation">
-      <div class="nav-toggle" id="navToggle" role="button" aria-label="Toggle navigation menu" tabindex="0">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
+      <button class="nav-toggle" id="navToggle" type="button" aria-label="Toggle navigation menu" aria-controls="navMenu" aria-expanded="false">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </button>
       <ul class="nav-menu" id="navMenu">
         <li><a href="#hero" class="nav-link">Home</a></li>
         <li><a href="#projects" class="nav-link">Projects</a></li>
@@ -49,7 +57,7 @@
         <!-- Mobile profile image at the top -->
         <div class="hero-image mobile-first">
           <div class="profile-frame">
-            <img src="assets/profile-photo.jpg" alt="Fahmid Hasan" class="profile-image">
+            <img src="assets/profile-photo.jpg" alt="Fahmid Hasan" class="profile-image" width="2048" height="2048" decoding="async" fetchpriority="high">
           </div>
         </div>
         
@@ -84,7 +92,7 @@
         <!-- Desktop profile image at the right -->
         <div class="hero-image desktop-only">
           <div class="profile-frame">
-            <img src="assets/profile-photo.jpg" alt="Fahmid Hasan" class="profile-image">
+            <img src="assets/profile-photo.jpg" alt="Fahmid Hasan" class="profile-image" width="2048" height="2048" decoding="async">
           </div>
         </div>
       </div>
@@ -99,9 +107,9 @@
         
         <div class="projects-grid" id="projectsGrid">
           <!-- Project 1: AI-Powered Cold Outreach Automation -->
-          <div class="project-card" id="project-cold-outreach" data-category="automation" data-video="assets/Project/Al-Powered Lead Generation & Cold Outreach.mp4" data-title="AI-Powered Cold Outreach Automation">
+          <div class="project-card" id="project-cold-outreach" data-category="automation" data-video="assets/Project/Al-Powered Lead Generation &amp; Cold Outreach.mp4" data-title="AI-Powered Cold Outreach Automation">
             <div class="project-image">
-              <img src="assets/Project/cold-outreach-thumbnail.jpeg" alt="AI-Powered Cold Outreach Automation" loading="lazy">
+              <img src="assets/Project/cold-outreach-thumbnail.jpeg" alt="AI-Powered Cold Outreach Automation" width="2832" height="1262" loading="lazy" decoding="async">
             </div>
             <div class="project-content">
               <h3 class="project-title">AI-Powered Cold Outreach Automation</h3>
@@ -121,7 +129,7 @@
           <!-- Project 2: DamKoto Bot -->
           <div class="project-card" id="project-damkoto" data-category="automation" data-video="assets/Project/Dam koto bot.mp4" data-title="DamKoto Bot — Multilingual AI Customer Support">
             <div class="project-image">
-              <img src="assets/Project/damkoto-bot-thumbnail.jpeg" alt="DamKoto Bot — Multilingual AI Customer Support" loading="lazy">
+              <img src="assets/Project/damkoto-bot-thumbnail.jpeg" alt="DamKoto Bot — Multilingual AI Customer Support" width="2838" height="1482" loading="lazy" decoding="async">
             </div>
             <div class="project-content">
               <h3 class="project-title">DamKoto Bot — Multilingual AI Support</h3>
@@ -168,22 +176,22 @@
               <div class="form-row">
                 <div class="form-group">
                   <label for="contact-name">Name</label>
-                  <input type="text" id="contact-name" name="name" placeholder="Your name" required>
+                  <input type="text" id="contact-name" name="name" placeholder="Your name" autocomplete="name" required>
                 </div>
                 <div class="form-group">
                   <label for="contact-email">Email</label>
-                  <input type="email" id="contact-email" name="email" placeholder="you@company.com" required>
+                  <input type="email" id="contact-email" name="email" placeholder="you@company.com" autocomplete="email" required>
                 </div>
               </div>
 
               <div class="form-group">
                 <label for="contact-company">Company</label>
-                <input type="text" id="contact-company" name="company" placeholder="Your company">
+                <input type="text" id="contact-company" name="company" placeholder="Your company" autocomplete="organization">
               </div>
 
               <div class="form-group">
                 <label for="contact-message">Message</label>
-                <textarea id="contact-message" name="message" rows="5" placeholder="Tell me about your project..." required></textarea>
+                <textarea id="contact-message" name="message" rows="5" placeholder="Tell me about your project..." autocomplete="off" required></textarea>
               </div>
 
               <button type="submit" class="btn btn-primary contact-submit">
@@ -248,35 +256,35 @@
     </footer>
 
     <!-- Command Palette -->
-    <div class="command-palette" id="commandPalette" role="dialog" aria-labelledby="commandPaletteLabel" aria-modal="true" tabindex="-1">
+    <div class="command-palette" id="commandPalette" role="dialog" aria-labelledby="commandPaletteLabel" aria-modal="true" aria-hidden="true" tabindex="-1">
       <div class="command-palette-content">
         <h2 id="commandPaletteLabel" class="sr-only">Command Palette</h2>
         <input type="text" id="commandInput" placeholder="Type a command or search..." aria-label="Command input">
         <ul id="commandList" class="command-list" role="listbox">
-          <li data-action="home" role="option">Home</li>
-          <li data-action="projects" role="option">Projects</li>
-          <li data-action="contact" role="option">Contact</li>
-          <li data-action="dark-mode" role="option">Toggle Dark Mode</li>
+          <li data-action="home" role="option" aria-selected="false">Home</li>
+          <li data-action="projects" role="option" aria-selected="false">Projects</li>
+          <li data-action="contact" role="option" aria-selected="false">Contact</li>
+          <li data-action="dark-mode" role="option" aria-selected="false">Toggle Dark Mode</li>
         </ul>
       </div>
     </div>
 
     <!-- Video Demo Popup -->
     <div class="video-popup-backdrop" id="videoPopupBackdrop" aria-hidden="true"></div>
-    <div class="video-popup" id="videoPopup" role="dialog" aria-label="Project demo preview">
+    <div class="video-popup" id="videoPopup" role="dialog" aria-labelledby="videoPopupTitle" aria-modal="true" aria-hidden="true" tabindex="-1">
       <div class="video-popup-header">
         <span class="video-popup-badge"><i class="fas fa-play" aria-hidden="true"></i> Live Demo</span>
         <span class="video-popup-title" id="videoPopupTitle"></span>
         <button class="video-popup-close" id="videoPopupClose" aria-label="Close demo">&#x2715;</button>
       </div>
-      <video id="videoPopupPlayer" muted loop playsinline></video>
+      <video id="videoPopupPlayer" muted loop playsinline preload="none"></video>
     </div>
 
     <!-- External Scripts -->
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js" integrity="sha384-d+UOwmNNIC7V4izkTAKSXzWhjC2GxiS9PTykO1XdOPC3nc2z65UOS7SP6QdKPA70" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha384-d+vyQ0dYcymoP8ndq2hW7FGC50nqGdXUEgoOUGxbbkAJwZqL7h+jKN0GGgn9hFDS" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" integrity="sha384-poC0r6usQOX2Ayt/VGA+t81H6V3iN9L+Irz9iO8o+s0X20tLpzc9DOOtnKxhaQSE" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js" integrity="sha384-NMn9+T8zIKnDUstqb5le7vdLNSyAgSU9DtEPT/b7ks9NJQpPk4Dc9b1tI8oyzimc" crossorigin="anonymous"></script>
     <script src="script.js"></script>
   </body>
 </html>
