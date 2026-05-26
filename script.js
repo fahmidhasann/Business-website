@@ -99,30 +99,35 @@
     if (typeof particlesJS !== 'undefined') {
       particlesJS('particles-js', {
         particles: {
-          number: { value: 60, density: { enable: true, value_area: 900 } },
-          color: { value: '#ffffff' },
-          shape: { type: 'circle', stroke: { width: 0, color: '#000000' } },
+          number: { value: 35, density: { enable: true, value_area: 800 } },
+          color: { value: '#C4704B' },
+          shape: { type: 'circle' },
           opacity: {
             value: 0.45,
             random: true,
-            anim: { enable: true, speed: 0.5, opacity_min: 0.15, sync: false }
+            anim: { enable: true, speed: 0.4, opacity_min: 0.15, sync: false }
           },
-          size: { value: 2.5, random: true, anim: { enable: false } },
-          line_linked: { enable: true, distance: 160, color: '#ffffff', opacity: 0.2, width: 1 },
+          size: { value: 2.2, random: true, anim: { enable: false } },
+          line_linked: { enable: false },
           move: {
-            enable: true, speed: 0.5, direction: 'none', random: true,
-            straight: false, out_mode: 'out', bounce: false
+            enable: true,
+            speed: 0.4,
+            direction: 'none',
+            random: true,
+            straight: false,
+            out_mode: 'out',
+            bounce: false
           }
         },
         interactivity: {
           detect_on: 'canvas',
           events: {
-            onhover: { enable: true, mode: 'grab' },
+            onhover: { enable: true, mode: 'bubble' },
             onclick: { enable: false },
             resize: true
           },
           modes: {
-            grab: { distance: 140, line_linked: { opacity: 0.5 } }
+            bubble: { distance: 100, size: 4, duration: 2, opacity: 0.8 }
           }
         },
         retina_detect: true
@@ -147,10 +152,26 @@
           delay: i * 0.08
         });
       });
+
+      // Scroll activation for timeline process steps
+      gsap.utils.toArray('.process-step').forEach(function (step) {
+        gsap.to(step, {
+          scrollTrigger: {
+            trigger: step,
+            start: 'top bottom-=100',
+            onEnter: function () {
+              step.classList.add('active-step');
+            },
+            onLeaveBack: function () {
+              step.classList.remove('active-step');
+            }
+          }
+        });
+      });
     } else {
       var observerOptions = {
         threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
+        rootMargin: '0px 0px -60px 0px'
       };
 
       var observer = new IntersectionObserver(function (entries) {
@@ -158,11 +179,14 @@
           if (entry.isIntersecting) {
             entry.target.style.opacity = '1';
             entry.target.style.transform = 'translateY(0)';
+            if (entry.target.classList.contains('process-step')) {
+              entry.target.classList.add('active-step');
+            }
           }
         });
       }, observerOptions);
 
-      document.querySelectorAll('.project-card').forEach(function (el) {
+      document.querySelectorAll('.project-card, .process-step').forEach(function (el) {
         el.style.opacity = '0';
         el.style.transform = 'translateY(30px)';
         el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
@@ -402,6 +426,74 @@
   }
 
   /* ==========================================================================
+     Custom Subtitle Slider, FAQ Accordions, and Magnetic Buttons
+     ========================================================================== */
+
+  function initializeSubtitleSlider() {
+    var slider = document.querySelector('.subtitle-slider');
+    if (!slider) return;
+
+    var slides = Array.from(slider.querySelectorAll('.hero-title'));
+    if (slides.length <= 1) return;
+
+    var currentIndex = 0;
+
+    setInterval(function () {
+      slides[currentIndex].classList.remove('active');
+      currentIndex = (currentIndex + 1) % slides.length;
+      slides[currentIndex].classList.add('active');
+
+      var translateY = -currentIndex * (100 / slides.length);
+      slider.style.transform = 'translateY(' + translateY + '%)';
+    }, 3000);
+  }
+
+  function initializeFaqAccordions() {
+    var faqItems = document.querySelectorAll('.faq-item');
+    faqItems.forEach(function (item) {
+      var trigger = item.querySelector('.faq-trigger');
+      var panel = item.querySelector('.faq-panel');
+      var inner = item.querySelector('.faq-panel-inner');
+      if (!trigger || !panel || !inner) return;
+
+      trigger.addEventListener('click', function () {
+        var isExpanded = trigger.getAttribute('aria-expanded') === 'true';
+
+        faqItems.forEach(function (otherItem) {
+          if (otherItem === item) return;
+          var otherTrigger = otherItem.querySelector('.faq-trigger');
+          var otherPanel = otherItem.querySelector('.faq-panel');
+          if (otherTrigger && otherPanel && otherTrigger.getAttribute('aria-expanded') === 'true') {
+            otherTrigger.setAttribute('aria-expanded', 'false');
+            otherItem.classList.remove('faq-active');
+            if (typeof gsap !== 'undefined') {
+              gsap.to(otherPanel, { height: 0, duration: 0.35, ease: 'power2.inOut' });
+            } else {
+              otherPanel.style.height = '0px';
+            }
+          }
+        });
+
+        trigger.setAttribute('aria-expanded', String(!isExpanded));
+        item.classList.toggle('faq-active', !isExpanded);
+
+        if (typeof gsap !== 'undefined') {
+          gsap.to(panel, {
+            height: !isExpanded ? inner.scrollHeight : 0,
+            duration: 0.4,
+            ease: 'power2.out',
+            overwrite: 'auto'
+          });
+        } else {
+          panel.style.height = !isExpanded ? inner.scrollHeight + 'px' : '0px';
+        }
+      });
+    });
+  }
+
+
+
+  /* ==========================================================================
      UI Components
      ========================================================================== */
 
@@ -606,6 +698,8 @@
     initializeNavScroll();
     initializeContactForm();
     initializeEasterEgg();
+    initializeSubtitleSlider();
+    initializeFaqAccordions();
 
     window.addEventListener('scroll', throttle(updateProgressBar, 50));
   });
