@@ -363,7 +363,7 @@ body {
 
 .hero-subtitle {
   font-family: var(--font-body);
-  font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+  font-size: clamp(1rem, 1.8vw, 1.3rem);
   font-weight: 400;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -375,15 +375,11 @@ body {
   overflow: hidden;
 }
 
-.typed-text {
+.hero-title {
   color: white;
   display: inline-block;
   min-height: 1.5em;
   white-space: nowrap;
-}
-
-.cursor-blink {
-  display: none;
 }
 
 .hero-tagline {
@@ -463,6 +459,16 @@ body {
   transform: translateY(-1px);
   background: #B0613F;
   box-shadow: var(--shadow-md);
+}
+
+.btn-consultation {
+  background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+  box-shadow: 0 0 18px rgba(34, 197, 94, 0.35);
+}
+
+.btn-consultation:hover {
+  background: linear-gradient(135deg, #16a34a 0%, #15803d 100%);
+  box-shadow: 0 0 24px rgba(34, 197, 94, 0.5), var(--shadow-md);
 }
 
 .btn-secondary {

@@ -121,23 +121,6 @@
     }
   }
 
-  function initializeTextAnimations() {
-    if (typeof Typed !== 'undefined') {
-      new Typed('.typed-text', {
-        strings: ['AI-Powered Solutions', 'Workflow Automation', 'Intelligent Systems'],
-        typeSpeed: 45,
-        backSpeed: 25,
-        loop: true,
-        backDelay: 3000,
-        startDelay: 1500,
-        showCursor: true,
-        cursorChar: '|',
-        autoInsertCss: true,
-        smartBackspace: true
-      });
-    }
-  }
-
   function initializeScrollEffects() {
     if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
       gsap.registerPlugin(ScrollTrigger);
@@ -227,9 +210,6 @@
         if (targetId === '#') return;
         var targetElement = document.querySelector(targetId);
         if (targetElement) {
-          if (targetElement.classList.contains('project-card')) {
-            revealProjectCard(targetElement);
-          }
           requestAnimationFrame(function () {
             window.scrollTo({
               top: getScrollTargetTop(targetElement),
@@ -257,69 +237,6 @@
         }
       });
     }
-  }
-
-  /* ==========================================================================
-     Project Functions
-     ========================================================================== */
-
-  function clearProjectHideTimeout(projectCard) {
-    if (!projectCard || !projectCard._hideTimeoutId) return;
-    clearTimeout(projectCard._hideTimeoutId);
-    projectCard._hideTimeoutId = null;
-  }
-
-  function revealProjectCard(projectCard) {
-    if (!projectCard || !projectCard.classList.contains('project-card')) return;
-    clearProjectHideTimeout(projectCard);
-    var showMoreBtn = document.getElementById('projectsShowMore');
-    if (projectCard.classList.contains('hidden-card') && showMoreBtn && showMoreBtn.getAttribute('aria-expanded') !== 'true') {
-      showMoreBtn.click();
-    }
-  }
-
-  function initializeShowMore() {
-    var VISIBLE_COUNT = 3;
-
-    function setup(gridId, btnId) {
-      var grid = document.getElementById(gridId);
-      var btn = document.getElementById(btnId);
-      if (!grid || !btn) return;
-
-      var allItems = Array.from(grid.children);
-      allItems.forEach(function (item, i) {
-        if (i >= VISIBLE_COUNT) {
-          item.classList.add('hidden-card');
-        }
-      });
-
-      if (allItems.length <= VISIBLE_COUNT) {
-        btn.style.display = 'none';
-        return;
-      }
-
-      btn.addEventListener('click', function () {
-        var isExpanded = btn.getAttribute('aria-expanded') === 'true';
-        var label = btn.querySelector('.show-more-label');
-        var isProjects = gridId === 'projectsGrid';
-
-        if (isExpanded) {
-          allItems.forEach(function (item, i) {
-            if (i >= VISIBLE_COUNT) item.classList.add('hidden-card');
-          });
-          btn.setAttribute('aria-expanded', 'false');
-          if (label) label.textContent = isProjects ? 'Show More Projects' : 'Show More Videos';
-        } else {
-          allItems.forEach(function (item) {
-            item.classList.remove('hidden-card');
-          });
-          btn.setAttribute('aria-expanded', 'true');
-          if (label) label.textContent = isProjects ? 'Show Less Projects' : 'Show Less Videos';
-        }
-      });
-    }
-
-    setup('projectsGrid', 'projectsShowMore');
   }
 
   /* ==========================================================================
@@ -462,9 +379,6 @@
       case 'home':
         scrollToSection('hero');
         break;
-      case 'projects':
-        scrollToSection('projects');
-        break;
       case 'contact':
         scrollToSection('contact');
         break;
@@ -495,70 +409,6 @@
     setThemeToggleIcon(toggleButton, document.documentElement.getAttribute('data-theme'));
     toggleButton.addEventListener('click', toggleTheme);
     document.body.appendChild(toggleButton);
-  }
-
-  function initializeHoverEffects() {
-    var backdrop = document.getElementById('videoPopupBackdrop');
-    var popup = document.getElementById('videoPopup');
-    var popupPlayer = document.getElementById('videoPopupPlayer');
-    var popupTitle = document.getElementById('videoPopupTitle');
-    var closeBtn = document.getElementById('videoPopupClose');
-    if (!backdrop || !popup || !popupPlayer) return;
-
-    var lastFocusedElement = null;
-
-    function showPopup(card) {
-      var src = card.dataset.video;
-      var title = card.dataset.title || '';
-      if (!src) return;
-      lastFocusedElement = document.activeElement;
-
-      var resolvedSrc;
-      try {
-        resolvedSrc = new URL(src, location.href).href;
-      } catch (err) {
-        resolvedSrc = src;
-      }
-
-      if (popupPlayer.src !== resolvedSrc) {
-        popupPlayer.src = src;
-      }
-      if (popupTitle) popupTitle.textContent = title;
-      backdrop.classList.add('visible');
-      popup.classList.add('visible');
-      popup.setAttribute('aria-hidden', 'false');
-      popupPlayer.currentTime = 0;
-      if (closeBtn) closeBtn.focus();
-
-      var playPromise = popupPlayer.play();
-      if (playPromise) {
-        playPromise.catch(function () {});
-      }
-    }
-
-    function hidePopup() {
-      if (!popup.classList.contains('visible')) return;
-      backdrop.classList.remove('visible');
-      popup.classList.remove('visible');
-      popup.setAttribute('aria-hidden', 'true');
-      popupPlayer.pause();
-      popupPlayer.removeAttribute('src');
-      popupPlayer.load();
-      if (lastFocusedElement && typeof lastFocusedElement.focus === 'function') {
-        lastFocusedElement.focus();
-      }
-    }
-
-    document.querySelectorAll('.btn-demo').forEach(function (btn) {
-      var card = btn.closest('.project-card[data-video]');
-      if (card) btn.addEventListener('click', function () { showPopup(card); });
-    });
-
-    backdrop.addEventListener('click', hidePopup);
-    if (closeBtn) closeBtn.addEventListener('click', hidePopup);
-    document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape') hidePopup();
-    });
   }
 
   function initializeNavScroll() {
@@ -737,13 +587,10 @@
 
   document.addEventListener('DOMContentLoaded', function () {
     initializeParticles();
-    initializeTextAnimations();
     initializeScrollEffects();
     initializeNavigation();
-    initializeShowMore();
     initializeCommandPalette();
     initializeDarkModeToggle();
-    initializeHoverEffects();
     initializeNavScroll();
     initializeContactForm();
     initializeEasterEgg();

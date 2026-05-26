@@ -42,7 +42,6 @@
       </button>
       <ul class="nav-menu" id="navMenu">
         <li><a href="#hero" class="nav-link">Home</a></li>
-        <li><a href="#projects" class="nav-link">Projects</a></li>
         <li><a href="#contact" class="nav-link">Contact</a></li>
       </ul>
     </nav>
@@ -77,14 +76,12 @@
             <span class="name-char">n</span>
           </h1>
           <div class="hero-subtitle">
-            <span class="typed-text"></span>
-            <span class="cursor-blink">|</span>
+            <span class="hero-title">AI Consultant.</span>
           </div>
-          <p class="hero-tagline">I help businesses and startups build intelligent systems that save time.</p>
+          <p class="hero-tagline">I help businesses and individuals save time and boost productivity by integrating AI into their daily workflows.</p>
 
           <div class="hero-cta">
-            <a href="#projects" class="btn btn-primary">View Projects</a>
-            <a href="#contact" class="btn btn-secondary">Start a Project</a>
+            <a href="#contact" class="btn btn-primary btn-consultation">Book a Consultation</a>
           </div>
 
         </div>
@@ -94,65 +91,6 @@
           <div class="profile-frame">
             <img src="assets/profile-photo.jpg" alt="Fahmid Hasan" class="profile-image" width="2048" height="2048" decoding="async">
           </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="section projects-section" aria-labelledby="projects-heading">
-      <div class="container">
-        <header class="section-header">
-          <h2 id="projects-heading" class="section-title">Projects</h2>
-        </header>
-        
-        <div class="projects-grid" id="projectsGrid">
-          <!-- Project 1: AI-Powered Cold Outreach Automation -->
-          <div class="project-card" id="project-cold-outreach" data-category="automation" data-video="assets/Project/Al-Powered Lead Generation &amp; Cold Outreach.mp4" data-title="AI-Powered Cold Outreach Automation">
-            <div class="project-image">
-              <img src="assets/Project/cold-outreach-thumbnail.jpeg" alt="AI-Powered Cold Outreach Automation" width="2832" height="1262" loading="lazy" decoding="async">
-            </div>
-            <div class="project-content">
-              <h3 class="project-title">AI-Powered Cold Outreach Automation</h3>
-              <p class="project-description">An automated B2B outreach pipeline that scrapes lead websites, uses Groq LLM to generate personalized cold emails, sends them via Gmail, and updates lead status in Google Sheets — fully hands-free.</p>
-              <div class="project-tags">
-                <span class="tag">n8n</span>
-                <span class="tag">Google Sheets</span>
-                <span class="tag">Groq (LLaMA 3.3)</span>
-                <span class="tag">Gmail</span>
-              </div>
-              <div class="project-actions">
-                <button class="btn-demo" aria-label="Watch demo for AI-Powered Cold Outreach Automation"><i class="fas fa-play" aria-hidden="true"></i> Watch Demo</button>
-              </div>
-            </div>
-          </div>
-
-          <!-- Project 2: DamKoto Bot -->
-          <div class="project-card" id="project-damkoto" data-category="automation" data-video="assets/Project/Dam koto bot.mp4" data-title="DamKoto Bot — Multilingual AI Customer Support">
-            <div class="project-image">
-              <img src="assets/Project/damkoto-bot-thumbnail.jpeg" alt="DamKoto Bot — Multilingual AI Customer Support" width="2838" height="1482" loading="lazy" decoding="async">
-            </div>
-            <div class="project-content">
-              <h3 class="project-title">DamKoto Bot — Multilingual AI Support</h3>
-              <p class="project-description">An AI-powered customer support automation that responds fluently in Bangla, Banglish, or English by detecting and matching the user's language. Searches a live product catalog by brand, price range, or model, checks inventory status, and answers questions about delivery, payment, and return policies using a vector-based knowledge base.</p>
-              <div class="project-tags">
-                <span class="tag">n8n</span>
-                <span class="tag">Google Gemini</span>
-                <span class="tag">AI Agent</span>
-                <span class="tag">Vector Store</span>
-                <span class="tag">Bangla NLP</span>
-              </div>
-              <div class="project-actions">
-                <button class="btn-demo" aria-label="Watch demo for DamKoto Bot"><i class="fas fa-play" aria-hidden="true"></i> Watch Demo</button>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-        <div class="show-more-container">
-          <button class="btn-show-more" id="projectsShowMore" aria-expanded="false" aria-controls="projectsGrid">
-            <span class="show-more-label">Show More Projects</span> <i class="fas fa-chevron-down" aria-hidden="true"></i>
-          </button>
         </div>
       </div>
     </section>
@@ -262,22 +200,10 @@
         <input type="text" id="commandInput" placeholder="Type a command or search..." aria-label="Command input">
         <ul id="commandList" class="command-list" role="listbox">
           <li data-action="home" role="option" aria-selected="false">Home</li>
-          <li data-action="projects" role="option" aria-selected="false">Projects</li>
           <li data-action="contact" role="option" aria-selected="false">Contact</li>
           <li data-action="dark-mode" role="option" aria-selected="false">Toggle Dark Mode</li>
         </ul>
       </div>
-    </div>
-
-    <!-- Video Demo Popup -->
-    <div class="video-popup-backdrop" id="videoPopupBackdrop" aria-hidden="true"></div>
-    <div class="video-popup" id="videoPopup" role="dialog" aria-labelledby="videoPopupTitle" aria-modal="true" aria-hidden="true" tabindex="-1">
-      <div class="video-popup-header">
-        <span class="video-popup-badge"><i class="fas fa-play" aria-hidden="true"></i> Live Demo</span>
-        <span class="video-popup-title" id="videoPopupTitle"></span>
-        <button class="video-popup-close" id="videoPopupClose" aria-label="Close demo">&#x2715;</button>
-      </div>
-      <video id="videoPopupPlayer" muted loop playsinline preload="none"></video>
     </div>
 
     <!-- External Scripts -->
