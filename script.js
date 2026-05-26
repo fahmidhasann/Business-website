@@ -63,6 +63,15 @@
      Theme Functions
      ========================================================================== */
 
+  function initializeTheme() {
+    var storedTheme = localStorage.getItem('theme');
+    if (storedTheme === 'dark' || storedTheme === 'light') {
+      document.documentElement.setAttribute('data-theme', storedTheme);
+      return;
+    }
+    document.documentElement.setAttribute('data-theme', 'light');
+  }
+
   function setThemeToggleIcon(toggleButton, theme) {
     if (!toggleButton) return;
     var icon = document.createElement('i');
@@ -138,20 +147,6 @@
           delay: i * 0.08
         });
       });
-
-      gsap.utils.toArray('.contact-card').forEach(function (card, i) {
-        gsap.from(card, {
-          scrollTrigger: {
-            trigger: card,
-            start: 'top bottom-=50',
-            toggleActions: 'play none none reverse'
-          },
-          y: 30,
-          opacity: 0,
-          duration: 0.6,
-          delay: i * 0.08
-        });
-      });
     } else {
       var observerOptions = {
         threshold: 0.1,
@@ -167,7 +162,7 @@
         });
       }, observerOptions);
 
-      document.querySelectorAll('.project-card, .contact-card').forEach(function (el) {
+      document.querySelectorAll('.project-card').forEach(function (el) {
         el.style.opacity = '0';
         el.style.transform = 'translateY(30px)';
         el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
@@ -333,6 +328,7 @@
       switch (e.key) {
         case 'ArrowDown':
           e.preventDefault();
+          if (!visibleCommands.length) break;
           newActiveElement = activeIndex >= 0
             ? visibleCommands[(activeIndex + 1) % visibleCommands.length]
             : visibleCommands[0];
@@ -340,6 +336,7 @@
           break;
         case 'ArrowUp':
           e.preventDefault();
+          if (!visibleCommands.length) break;
           newActiveElement = activeIndex >= 0
             ? visibleCommands[(activeIndex - 1 + visibleCommands.length) % visibleCommands.length]
             : visibleCommands[visibleCommands.length - 1];
@@ -378,6 +375,12 @@
     switch (action) {
       case 'home':
         scrollToSection('hero');
+        break;
+      case 'process':
+        scrollToSection('process');
+        break;
+      case 'faq':
+        scrollToSection('faq');
         break;
       case 'contact':
         scrollToSection('contact');
@@ -448,11 +451,13 @@
       var nameField = form.querySelector('#contact-name');
       var emailField = form.querySelector('#contact-email');
       var companyField = form.querySelector('#contact-company');
+      var topicField = form.querySelector('#contact-topic');
       var messageField = form.querySelector('#contact-message');
 
       var nameVal = nameField ? sanitizeInput(nameField.value) : '';
       var emailVal = emailField ? sanitizeInput(emailField.value) : '';
       var companyVal = companyField ? sanitizeInput(companyField.value) : '';
+      var topicVal = topicField ? sanitizeInput(topicField.value) : '';
       var messageVal = messageField ? sanitizeInput(messageField.value) : '';
 
       if (!nameVal || nameVal.length < 2) {
@@ -462,6 +467,11 @@
       }
       if (!isValidEmail(emailVal)) {
         result.textContent = 'Please enter a valid email address.';
+        result.className = 'form-result error';
+        return;
+      }
+      if (!topicVal) {
+        result.textContent = 'Please choose what you need help with.';
         result.className = 'form-result error';
         return;
       }
@@ -475,6 +485,7 @@
       if (nameField) nameField.value = nameVal;
       if (emailField) emailField.value = emailVal;
       if (companyField) companyField.value = companyVal;
+      if (topicField) topicField.value = topicVal;
       if (messageField) messageField.value = messageVal;
 
       // Loading state
@@ -492,7 +503,7 @@
         var data = await response.json();
 
         if (data.success) {
-          result.textContent = 'Message sent! I\'ll get back to you soon.';
+          result.textContent = 'Request sent! I\'ll get back to you soon.';
           result.className = 'form-result success';
           form.reset();
         } else {
@@ -586,6 +597,7 @@
      ========================================================================== */
 
   document.addEventListener('DOMContentLoaded', function () {
+    initializeTheme();
     initializeParticles();
     initializeScrollEffects();
     initializeNavigation();
