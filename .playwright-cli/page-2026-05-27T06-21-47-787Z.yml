@@ -1,0 +1,109 @@
+- generic [active] [ref=e1]:
+  - navigation [ref=e4]:
+    - generic [ref=e5]:
+      - link "Onnoy Logo Onnoy-অন্বয়" [ref=e6] [cursor=pointer]:
+        - /url: index.html
+        - img "Onnoy Logo" [ref=e7]
+        - generic [ref=e8]: Onnoy-অন্বয়
+      - generic [ref=e10]:
+        - button "Switch language" [ref=e11] [cursor=pointer]: BN
+        - button "Toggle dark mode" [ref=e12] [cursor=pointer]:
+          - img [ref=e13]
+      - button "Toggle navigation" [ref=e15] [cursor=pointer]:
+        - img [ref=e16]
+  - banner [ref=e17]:
+    - generic [ref=e18]:
+      - heading "Ethical Use of Technology" [level=1] [ref=e19]
+      - generic [ref=e20]: Onnoy — Connecting necessary dots
+      - paragraph [ref=e21]: A youth-led initiative in Mymensingh, Bangladesh. We teach students how to use technology responsibly, ethically, and safely.
+      - generic [ref=e22]:
+        - link "Start Learning →" [ref=e23] [cursor=pointer]:
+          - /url: modules.html
+        - link "Take the Quiz" [ref=e24] [cursor=pointer]:
+          - /url: quiz.html
+  - generic [ref=e26]:
+    - generic [ref=e27]: 3 Modules
+    - generic [ref=e28]: 90 Minutes
+    - generic [ref=e29]: Grade 11–12
+    - generic [ref=e30]: Mymensingh, Bangladesh
+  - generic [ref=e32]:
+    - heading "Our Impact" [level=2] [ref=e33]
+    - generic [ref=e34]:
+      - generic [ref=e35]:
+        - generic [ref=e36]: "0"
+        - generic [ref=e37]: Sessions Conducted
+      - generic [ref=e38]:
+        - generic [ref=e39]: "0"
+        - generic [ref=e40]: Students Reached
+      - generic [ref=e41]:
+        - generic [ref=e42]: "0"
+        - generic [ref=e43]: Districts Covered
+      - generic [ref=e44]:
+        - generic [ref=e45]: "0"
+        - generic [ref=e46]: Positive Feedback
+    - generic [ref=e47]: "Numbers updated after every session. Last updated: May 2026."
+  - generic [ref=e48]:
+    - generic [ref=e49]: What We Teach
+    - heading "Three Topics. One Session." [level=2] [ref=e50]
+    - generic [ref=e51]:
+      - generic [ref=e52]:
+        - generic [ref=e53]: "01"
+        - heading "Responsible Use of Technology" [level=3] [ref=e54]
+        - paragraph [ref=e55]: Understand how apps compete for your attention — and take it back.
+        - link "View Module →" [ref=e56] [cursor=pointer]:
+          - /url: module-1.html
+      - generic [ref=e57]:
+        - generic [ref=e58]: "02"
+        - heading "Digital Responsibility" [level=3] [ref=e59]
+        - paragraph [ref=e60]: Your digital footprint is permanent. Learn to share with intention.
+        - link "View Module →" [ref=e61] [cursor=pointer]:
+          - /url: module-2.html
+      - generic [ref=e62]:
+        - generic [ref=e63]: "03"
+        - heading "Academic Honesty" [level=3] [ref=e64]
+        - paragraph [ref=e65]: Copying gives you a grade. Thinking gives you a skill.
+        - link "View Module →" [ref=e66] [cursor=pointer]:
+          - /url: module-3.html
+  - generic [ref=e68]:
+    - heading "We are Onnoy" [level=2] [ref=e69]
+    - paragraph [ref=e70]: অন্বয় is a youth-led initiative based in Mymensingh, Bangladesh. We go into colleges and take sessions with Grade 11–12 students on the ethical use of technology — because these conversations are not happening enough.
+    - link "Learn More About Us" [ref=e71] [cursor=pointer]:
+      - /url: about.html
+  - generic [ref=e73]:
+    - generic [ref=e74]: Co
+    - heading "Stay Connected" [level=2] [ref=e75]
+    - paragraph [ref=e76]: Follow Onnoy on Facebook and YouTube for session updates, tips, and student stories.
+    - generic [ref=e77]:
+      - link "Facebook" [ref=e78] [cursor=pointer]:
+        - /url: https://www.facebook.com/profile.php?id=61589553037028
+        - img [ref=e79]
+        - text: Facebook
+      - link "YouTube" [ref=e81] [cursor=pointer]:
+        - /url: https://www.youtube.com/@onnoybd
+        - img [ref=e82]
+        - text: YouTube
+  - contentinfo [ref=e84]:
+    - paragraph [ref=e85]: Onnoy-অন্বয় | Connecting necessary dots
+    - paragraph [ref=e86]: Mymensingh, Bangladesh · Ethical Use of Technology Program
+    - generic [ref=e87]:
+      - link "Facebook" [ref=e88] [cursor=pointer]:
+        - /url: https://www.facebook.com/profile.php?id=61589553037028
+        - img [ref=e89]
+      - link "YouTube" [ref=e91] [cursor=pointer]:
+        - /url: https://www.youtube.com/@onnoybd
+        - img [ref=e92]
+    - paragraph [ref=e94]:
+      - link "FAQ" [ref=e95] [cursor=pointer]:
+        - /url: faq.html
+      - text: ·
+      - link "Scenario Cards" [ref=e96] [cursor=pointer]:
+        - /url: scenario-cards.html
+      - text: ·
+      - link "Facilitator Guide" [ref=e97] [cursor=pointer]:
+        - /url: facilitator-guide.html
+      - text: ·
+      - link "Contact" [ref=e98] [cursor=pointer]:
+        - /url: contact.html
+  - link [ref=e99] [cursor=pointer]:
+    - /url: https://wa.me/8801830900746
+    - img [ref=e100]
