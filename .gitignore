@@ -2,3 +2,4 @@
 .playwright-mcp/
 after-removal*.png
 .vercel
+.env*
