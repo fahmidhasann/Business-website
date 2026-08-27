@@ -518,6 +518,80 @@ body {
   line-height: 1.7;
 }
 
+/* Credential card — hero is dark in both themes, so this needs no theme variant */
+.hero-credential {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1.75rem;
+  padding: 0.85rem 1.25rem 0.85rem 0.85rem;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.06);
+  text-decoration: none;
+  max-width: 100%;
+  transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.hero-credential:hover {
+  transform: translateY(-3px);
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.28);
+}
+
+.hero-credential:focus {
+  outline-color: rgba(255, 255, 255, 0.9);
+}
+
+/* Badge art has a solid white background, so it sits on its own white plate */
+.hero-credential-badge {
+  flex-shrink: 0;
+  display: block;
+  padding: 0.5rem 0.65rem;
+  border-radius: 8px;
+  background: #ffffff;
+}
+
+.hero-credential-badge img {
+  display: block;
+  width: 104px;
+  height: auto;
+}
+
+.hero-credential-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  min-width: 0;
+}
+
+.hero-credential-issuer {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 600;
+  line-height: 1.2;
+  color: #ffffff;
+}
+
+.hero-credential-meta {
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.hero-credential-verify {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 0.15rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.hero-credential-verify i {
+  font-size: 0.7rem;
+}
+
 .hero-image {
   display: flex;
   justify-content: center;
@@ -1821,6 +1895,10 @@ body {
     text-align: center;
   }
 
+  .hero-credential {
+    align-self: center;
+  }
+
   .dark-mode-toggle {
     right: 20px;
   }
@@ -1896,6 +1974,17 @@ body {
 
   .hero-note {
     font-size: 0.9rem;
+  }
+
+  .hero-credential {
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 1rem;
+    text-align: center;
+  }
+
+  .hero-credential-copy {
+    align-items: center;
   }
   
   .btn {
