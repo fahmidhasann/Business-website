@@ -73,4 +73,4 @@ Any of these would need to be set up from scratch.
 
 ## Deployment
 
-Deployed on GitHub Pages at `https://fahmidhasann.github.io/`. The `<link rel="canonical">` tag in `index.html` references this URL — keep it updated if the domain changes.
+Deployed on GitHub Pages at `https://fahmidhasann.github.io/learnwithfahmid/`. The `<link rel="canonical">` tag in `index.html` references this URL — keep it updated if the domain changes.

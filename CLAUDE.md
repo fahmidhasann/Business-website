@@ -56,4 +56,4 @@ Submits via `fetch` POST to `https://api.web3forms.com/submit` (allowed in CSP `
 
 ## Deployment
 
-GitHub Pages at `https://fahmidhasann.github.io/learnaiwithfahmid/`, served from `main` at the repository root. Vercel is no longer used. Keep `<link rel="canonical">`, `og:url`, `og:image` and `twitter:image` in `index.html` in sync if the URL ever changes.
+GitHub Pages at `https://fahmidhasann.github.io/learnwithfahmid/`, served from `main` at the repository root. Vercel is no longer used. Keep `<link rel="canonical">`, `og:url`, `og:image` and `twitter:image` in `index.html` in sync if the URL ever changes.
